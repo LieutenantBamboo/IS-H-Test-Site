@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="foo.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="application/javascript" src="mapcode.js"></script>
+	<script> 
+		var text, parser, xmlDoc;
+		text = "<bookstore><book>" +
+		"<title>Everyday Italian</title>" +
+		"<author>Giada De Laurentiis</author>" +
+		"<year>2005</year>" +
+		"</book></bookstore>";
+
+		parser = new DOMParser();
+		xmlDoc = parser.parseFromString(text,"text/xml");
+
+		document.getElementById("demo").innerHTML =
+		xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+	</script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="aboutme.html">Bullshit Pandering</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">About Me</a></li>
+      <li><a href="another_page.html">Another Page</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="content">
+    	<div id="head">
+      		
+    	</div>
+	<div id="desc" class="row">
+		<div id="buttons" class="col-md-1">
+		  <button class="button" onclick="toggleButtonEffect(event, 'Images')">Toggle Images</button>
+		  <button class="button" onclick="toggleButtonEffect(event, 'Paragraps')">Toggle Paragraphs</button>
+		  <button class="button" onclick="toggleButtonEffect(event, 'Colours')">Change Text Colour</button>
+		</div>
+		<div id="text" class="col-md-5">
+      			<p>Hey folks, welcome to my site</p>
+			<p>I'm a 3rd year computer science student who has no idea what he's doing</p>
+			<p>Lets just JQuery this shit</p>
+    		</div>
+      		<div id="image" class="col-md-6">
+      			<img src="all.jpg">
+    		</div>
+    	</div>
+	<div id="thanks">
+      		<strong>Thanks for visiting!</strong>
+    	</div>
+	<div id="demo">Hello</div>
+  </div>
+</body>
+
+</HTML>
